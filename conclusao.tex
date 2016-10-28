@@ -1,0 +1,46 @@
+%====================================================================================================
+% Biblioteca Digital: Uma Estratégia de Gestão e Preservação de Periódicos do Século XX com DSpace e Metadados Dublin Core
+%====================================================================================================
+% TCC
+%----------------------------------------------------------------------------------------------------
+% Autor				: Vagner da Silva Bezerra
+% Orientador		: Juliana Wolf Pereira
+% Instituição 		: UFMS - Universidade Federal do Mato Grosso do Sul
+% Departamento		: CPCX - Sistema de Informação
+%----------------------------------------------------------------------------------------------------
+% Data de criação	: 10 de Outubro de 2016
+%====================================================================================================
+
+\chapter{Conclusão} \label{cap:conclusao}
+
+Neste trabalho a biblioteca \textit{FaultRecovery} foi modificada para ser utilizada por usuários que queiram modularizar seu código, separando os estados de seu \textit{firmware} por responsabilidades. A ideia e parte do código da biblioteca \textit{FaultRecovery} está sendo utilizada pelo projeto de extensão Coxim Robótica sediado na UFMS - Campus Coxim. O alunos estão programando um robô seguidor de linha, no qual são necessários alguns estados para que o carrinho desempenhe suas funções, como desviar de um obstáculo ou seguir em frente. Cada aluno do projeto é responsável pela implementação de um estado da máquina de estados do carrinho seguidor de linha.  
+
+Foram implementados testes com a biblioteca \textit{FaultRecovery} e sem ela. Foi constatado que na implementação sem a biblioteca o \textit{firmware} falhou e dessa forma não continuou a sequência de sua máquina de estados, pois não existia nenhum mecanismo de recuperação de falhas. No entanto nos testes realizados com a \textit{FaultRecovery}, em todas as vezes que o \textit{firmware} reiniciava, um ponto de recuperação era executado, mantendo a sequência original da máquina de estados. Existem pesquisas na área de semicondutores e na área de robótica que mostram os ruídos nos sensores como um problema comum que pode afetar a eficácia de algoritmos. Para contornar esse problema foi implementada neste trabalho a redundância de dados por meio da classe \textit{TData}, que se mostrou eficaz em manter a integridade dos dados, protegendo as informações que por ventura venham a ser modificadas por falhas. A \textit{TData} foi acrescentada à biblioteca \textit{FautRecovery}, sendo assim o usuário que utilizá-la poderá criar pontos de recuperação e separar o seu código, também poderá proteger dados importantes de seu \textit{firmware}. Cabe observar que a biblioteca se mostrou eficaz na resolução do problema, pois em todos os testes o \textit{firmware} tolerou 100\% das falhas injetadas.
+
+No entanto, a biblioteca adiciona um custo de desempenho no tempo de processamento, uma vez que toda a operação de leitura e escrita em uma variável, feita pela classe \textit{TData}, é custosa devido a execução de um esquema de votação usado para definir o valor correto permanecente em todas as cópias. Porém, isso já era esperado, ainda sim o uso da biblioteca se torna mais vantajoso pelo fato de a maioria das aplicações embarcadas não terem como fator principal o tempo de execução, exceto algumas aplicações de tempo real. Mas nestes casos são utilizados microcontroladores com um maior poder de processamento. 
+
+A biblioteca \textit{FaultInjector} também foi modificada neste trabalho, agora é possível injetar falhas na memória \textit{flash}. No teste realizado, mostrou-se os bits armazenados em determinado setor da memória \textit{flash} antes e depois da injeção de falhas. Com isso foi possível visualizar os bits sendo alterados. Além disso, também foi incluído um mapeamento de memória que possibilita a utilização do injetor de falhas em modelos pertencentes a família \textit{mbed} LPC176X. Porém só foi possível testar o mapeamento de memória no modelo 1768, pois era o único microcontrolador disponível para este trabalho. O mapeamento funcionou para o modelo disponível e foi possível injetar falhas nos endereços de memória disponíveis no mapeamento. Tanto a biblioteca \textit{FaultRecovery}, quanto a \textit{FaultInjector} estão disponíveis no \textit{github}, nos endereços \url{https://github.com/cleitonalmeida1/FaultRecovery} e \url{https://github.com/cleitonalmeida1/FaultInjector}
+
+Os resultados apresentados neste trabalho se mostraram bons, devido ao bom funcionamento das bibliotecas e a eficácia em solucionar problemas ocasionados por falhas. Conforme Johnson \cite{Johnson:1984}, tolerância a falhas é a propriedade que permite a um sistema continuar funcionando adequadamente, mesmo que num nível reduzido, após a manifestação de falhas em alguns de seus componentes.
+
+\section {Contribuições deste Trabalho}
+
+Uma arquitetura de desenvolvimento de aplicações embarcadas por meio de uma máquina de estados. Essa arquitetura está sendo utilizada pelos alunos do projeto de extensão Coxim robótica sediado na UFMS - campus Coxim. Em uma breve conversa  com os integrantes do projeto, que antes programavam em um mesmo computador, informaram que o desenvolvimento do programa está mais rápido pois agora eles podem trabalhar em mais de um estado ao mesmo tempo.
+
+\section{Dificuldades Encontradas}
+
+No início da implementação encontrou-se bastante dificuldade para se adaptar a uma linguagem de programação diferente de java. Embora elas sejam parecidas, a preparação do ambiente de desenvolvimento é totalmente diferente. Foram encontradas algumas dificuldades para configurar a IDE e o compilador c++ no windows 10. Além do tempo de estudo da linguagem que levou mais de 15 dias para adaptação. Por ser uma linguagem de ampla utilização, existem muitos fóruns de dúvidas que ajudaram durante o desenvolvimento. 
+
+\section{Trabalhos Futuros} \label{Sec:TrabalhosFuturos}
+
+\begin{itemize}
+
+\item Testar o mapeamento de memória incluído na biblioteca \textit{FaultInjector} para outros modelos além do modelo \textit{mbed} LPC1768.
+
+\item Salvar as cópias utilizadas pela classe \textit{TData}, para se ter redundância de dados, em outras regiões de memória. Atualmente as cópias estão sendo salvas na região de memória reservada ao usuário, mas futuramente poderá ser salva na região destinada aos periféricos internos do microcontrolador. 
+
+\item Aperfeiçoar a biblioteca \textit{FaultRecovery} e a classe \textit{TData} para diminuir o tempo de processamento em uma aplicação embarcada.
+
+\item Explorar a injeção de falhas na memória \textit{flash}, implementando um \textit{firmware} e injetando falhas enquanto ele está em execução.
+
+\end{itemize}

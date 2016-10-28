@@ -1,0 +1,80 @@
+%====================================================================================================
+% Biblioteca Digital: Uma Estratégia de Gestão e Preservação de Periódicos do Século XX com DSpace e Metadados Dublin Core
+%====================================================================================================
+% TCC
+%----------------------------------------------------------------------------------------------------
+% Autor				: Vagner da Silva Bezerra
+% Orientador		: Juliana Wolf Pereira
+% Instituição 		: UFMS - Universidade Federal do Mato Grosso do Sul
+% Departamento		: CPCX - Sistema de Informação
+%----------------------------------------------------------------------------------------------------
+% Data de criação	: 10 de Outubro de 2016
+%====================================================================================================
+
+\chapter{Introdução} \label{Cap:Introducao}
+
+Atualmente, o ser humano utiliza diversos aparelhos eletrônicos, tais como celulares, tocadores de MP3, televisores, \textit{tablets}, e outros dispositivos usados no auxílio das atividades diárias e na melhoria da qualidade de vida. Em comum, esses aparelhos possuem equipamentos computacionais acoplados e por isso são denominados sistemas embarcados (ou, computadores embutidos). Esses, desempenham tarefas específicas, sendo compostos por um circuito totalmente integrado que trabalha independente de outras operações, porém seu funcionamento depende das ações de um usuário ou de eventos no meio externo \cite{SistemasEmb:2014}. Um exemplo é o sistema embarcado de um microondas, no qual o programa interno é responsável por ajustar a potência correta, selecionar e medir o tempo de acionamento do forno, e emitir um sinal quando a tarefa é concluída.
+
+Por ser uma classe de computadores que executa tarefas de propósito específico, os sistemas embarcados geralmente possuem requisitos que combinam bom desempenho com rigorosas limitações de custo e consumo de energia \cite{Kruger:2014}. Para atender aos requisitos citados, os sistemas embarcados utilizam microcontroladores ao invés de microprocessadores, uma vez que, com exceção a alguns sistemas de tempo real, dificilmente necessitam de grande poder de processamento. Conforme a definição de Malvino \cite{Malvino:1985}, um microcontrolador é um computador completo construído num único circuito integrado, contendo, dentre outras unidades, portas de entrada e saída seriais e paralelas, temporizadores, controles de interrupção, memórias \textit{RAM} e \textit{ROM}. 
+
+Segundo Patterson e Hennessy \cite{Patterson:2007}, os sistemas embarcados correspondem a maior classe de computadores, pois devido a sua natureza especialista, podem ser encontrados em inúmeras aplicações. Chetan \cite{Chetan:2005} afirma que a quantidade de sistemas embarcados tem crescido nos últimos anos, pois com a expansão da computação ubíqua alguns equipamentos antes construídos com pouco ou nenhum recurso computacional tornaram-se mais sofisticados, incorporando algum tipo de sistema embarcado \cite{Kruger:2014}. Entretanto, falhas nesses sistemas podem causar transtornos e prejuízos. Por esse motivo, equipamentos utilizados na indústria aeroespacial e militar \cite{Nelson:1990}, dentre outros, são desenvolvidos com estratégias de tolerância a falhas para torná-los sistemas confiáveis. Conforme Johnson \cite{Johnson:1984}, tolerância a falhas é a propriedade que permite a um sistema continuar funcionando adequadamente, mesmo que num nível reduzido, após a manifestação de falhas em alguns de seus componentes. 
+
+%Considerando-se um caixa eletrônico com falhas na contagem do dinheiro quando os clientes realizam um saque, ou um sistema de falhas de controle aéreo com falhas no cálculo de suas rotas, os problemas seriam gravíssimos \cite{Patterson:2007}. Por estes motivos aumentar a confiabilidade de um sistema mediante à tecnicas de tolerância a falhas é imprescindível \cite{Nelson:1990}.
+
+\section{Justificativa}
+
+Embora a maioria dos sistemas embarcados tenha como requisito o baixo custo, a adoção de estratégias para a tolerância a falhas é necessária \cite{Thomas:1996}, pois consequências de falhas podem causar danos que variam de transtornos ao usuário a prejuízos financeiros \cite{Patterson:2007}. Um exemplo são os sistemas embarcados para estações meteorológicas, utilizadas na previsão de doenças em lavouras. Estes sistemas coletam os parâmetros climáticos por meio de sensores e enviam os dados a um computador central, que disponibiliza os índices de doença para o agricultor em uma aplicação \textit{web}. Os índices são utilizados pelos agricultores para definir o momento certo para a aplicação dos defensivos \cite{Reis:2004,Iaione:1999}. Se o sistema de coleta de dados climáticos falha, o agricultor não fica ciente do momento correto para aplicação dos defensivos, podendo a plantação ser infectada e destruída pela doença.
+
+Fenômenos da natureza, interferência eletromagnética, desgaste dos componentes de hardware \cite{Hsueh:1997} são alguns dos principais motivos para a causa de falhas em semicondutores, principalmente quando os dispositivos não possuem blindagem contra ruídos ou pulsos transitórios causados por prótons, íons pesadores e elétrons. Dependendo da amplitude em corrente, tensão e duração, podem ser interpretados como um sinal interno do circuito, gerando erros. Quando o pulso transitório ocorre no espaço de memória, esse efeito é visto como uma inversão do valor de armazenamento no flip-flop, ou seja, um bit-flip \cite{Ziegler:1996}. 
+
+Há também as falhas causadas por \textit{bugs} de software, pois na indústria de \textit{software} como um todo, existem em média de cinco a vinte falhas para cada mil linhas de código, e já existem no mercado sistemas embarcados com \textit{softwares} contendo mais de um milhão de linhas de código. Mesmo com um padrão CMM (\textit {Capability Maturity Model}) nível três (padrão intermediário, em que os processos são definidos e gerenciados) \cite{Pressman:2005} pode-se esperar milhares de problemas e \textit{recalls}, que em termos financeiros resultam em centenas de milhões de dólares de prejuízo \cite{Taurion:2005}.
+
+Com a crescente expansão da computação ubíqua, a utilização de sistemas embarcados tem se tornado cada vez mais presente no cotidiano das pessoas. Logo, falhas nesses dispositivos ficarão ainda mais propícias de ocorrerem, uma vez que os sistemas embarcados estão sujeitos a diversos fatores causadores de falhas, seja em razão de \textit{bugs} de \textit{software}, fenômenos físicos do meio ambiente que afetam o \textit{hardware}, interferência eletromagnética e desgaste dos componentes de \textit{hardware} \cite{Kruger:2014}. Dado o exposto é importante salientar que tolerar falhas no desenvolvimento de \textit{software} e \textit{hardware} é um dos grandes desafios da computação no Brasil \cite{Carvalho:2006}.
+
+
+\section{Objetivos} \label{Sec:Objetivos}
+
+\subsection{Objetivo Geral} \label{Sec:ObjetivoGeral}
+
+Este trabalho teve como objetivo ampliar o injetor de falhas (\textit{FaultInjector}) e a biblioteca de recuperação de falhas (\textit{FaultRecovery}) desenvolvidos por Kruger \cite{Kruger:2014} em sua dissertação de mestrado. O injetor de falhas não injetava falhas na memória \textit{flash} e seu mapeamento de memória era específico para o microcontrolador \textit{mbed} modelo NXP 1768. Nesta nova versão, a proposta foi ampliar o injetor para funcionar em qualquer modelo da família \textit{mbed} e remover a limitação que existia de inserir falhas apenas na memória \textit{SRAM}.
+
+A biblioteca \textit{FaultRecovery} permitia a recuperação de falhas e a implementação de uma máquina de estados. No entanto, o usuário ficava responsável por criar sua própria estrutura de manipulação da máquina de estados, e isso a tornava confusa e factível a erros. Nesta ampliação, objetivou-se melhorar a arquitetura da biblioteca para facilitar seu uso, criando uma nova estrutura capaz de gerenciar automaticamente as mudanças de estados, reduzindo o número de alocações de memória e evitando cópias desnecessárias de objetos.
+
+Por fim, outro objetivo deste trabalho foi criar uma classe na biblioteca \textit{FaultRecovery} capaz de automatizar a redundância dos dados nos sistemas computacionais embarcados.
+
+%A redundância de dados em um sistema embarcado possibilita manter a integridade dos dados, para isso a criação da classe TData teve como objetivo realizar um esquema de votação a cada vez que uma variável do tipo TData é lida, possibilitando manter a integridade do valor armazenado.
+
+
+\subsection{Objetivos Específicos}\label{Sec:ObjetivosEspecificos}
+\begin{itemize}
+	
+	\item  Desenvolver um mapeamento das regiões de memória, para estender a utilização da biblioteca \textit{FaulInjector} aos demais modelos da família de microcontroladores \textit{mbed} LPC176X;
+	
+	\item Pesquisar as técnicas de tolerância a falhas presentes na literatura, identificar quais podem ser adicionadas a biblioteca de tolerância a falhas atual. 
+	
+	\item Melhorar o sistema injetor de falhas para que ele possa injetar falhas em outras regiões de memória ainda não exploradas (\textit{flash}).	
+	
+	\item Ampliar a biblioteca de recuperação de falhas \textit{FaultRecovery}, para que seja possível desenvolver uma máquina de estados, na qual cada estado seja implementado independentemente para facilitar a modularização.
+	
+	\item Implementar uma classe (TData) capaz de fazer redundância automática dos dados;
+	
+	\item Realizar testes de desempenho e eficiência após as modificações da biblioteca \textit{FaultRecovery}.
+	
+	\item Realizar testes de desempenho e eficiência após a criação da classe \textit{TData}.
+	
+	\item Após a modificação do injetor de falhas, verificar se falhas estão sendo injetadas na memória \textit{flash}. 						
+	
+\end{itemize}
+
+
+\newpage
+
+\section{Organização da Proposta} \label{Sec:Organizacao}
+
+No Capítulo 2 são apresentados os conceitos utilizados neste trabalho de acordo com a literatura estudada. Na Seção \ref{sec:falhaErroDefeito} explica-se os conceitos de falha, erro e defeito ou modelo de três universos. Na Seção \ref{sec:radiacao} são descritas as principais fontes de radiação e seus efeitos nos circuitos eletrônicos.  O conceito de ``dependabilidade'' é explicado na Seção \ref{sec:denpendabilidade} e na Seção \ref{sec:tolerancia} explica-se o conceito geral de tolerância a falhas e os atributos necessários para que uma falha seja definida. Na seção \ref{sec:tecnica} são apresentadas as principais técnicas de tolerância a falhas e na seção \ref{sec:InjecaoDeFalhas} as principais técnicas de injeção de falhas.
+
+As modificações realizadas nas bibliotecas e a criação da classe \textit{TData} são exibidas no Capítulo 3, dividido em três seções. Na Seção \ref{sec:InjetorDeFalhas} são apresentadas as implementações e as modificações realizadas na biblioteca \textit{FaultInjector}. Na Seção \ref{sec:extensaoBiblioteca} é exibida a extensão da biblioteca \textit{FaultRecovery}. Na Seção \ref{sec:classeTData} são exibidas as implementações realizadas para criação da classe \textit{TData}, sua utilização é explicada mediante exemplos.
+
+No Capítulo \ref{cap:Resultados} são exibidos os resultados encontrados após os testes de tempo de execução e tolerância a falhas em que foram expostas as bibliotecas \textit{FaultInjector}, \textit{FaultRecovery} e a classe \textit{TData}. No Capítulo \ref{cap:conclusao} são exibidas as considerações finais deste trabalho.
+
+

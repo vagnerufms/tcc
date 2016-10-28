@@ -1,0 +1,22 @@
+%====================================================================================================
+% Biblioteca Digital: Uma Estratégia de Gestão e Preservação de Periódicos do Século XX com DSpace e Metadados Dublin Core
+%====================================================================================================
+% TCC
+%----------------------------------------------------------------------------------------------------
+% Autor				: Vagner da Silva Bezerra
+% Orientador		: Juliana Wolf Pereira
+% Instituição 		: UFMS - Universidade Federal do Mato Grosso do Sul
+% Departamento		: CPCX - Sistema de Informação
+%----------------------------------------------------------------------------------------------------
+% Data de criação	: 10 de Outubro de 2016
+%====================================================================================================
+
+\chapter*{Resumo}
+
+Atualmente, o ser humano utiliza diversos aparelhos eletrônicos, tais como celulares, tocadores de MP3, televisores, \textit{tablets}, e outros dispositivos usados no auxílio das atividades diárias e na melhoria da qualidade de vida. Graças a expansão da computação ubíqua os sistemas embarcados estão cada vez mais presentes no cotidiano das pessoas. No entanto, esses sistemas podem apresentar defeitos, que correspondem a uma incapacidade do sistema executar uma determinada tarefa devido a falhas em algum componente. As causas estão associadas a danos causados em algum componente, ferrugem, ou outros tipos de deteriorações; \textit{bugs} de software; e perturbações externas, como duras condições ambientais, interferência eletromagnética, radiação ionizante, ou má utilização do sistema \cite{Nelson:1990}.
+
+Os objetivos deste trabalho foram estudar possíveis causas de falhas em sistemas embarcados e ampliar as bibliotecas \textit{FaultInjector} e \textit{FaultRecovery}. Uma das modificações visa possibilitar ao usuário desenvolver uma máquina de estados, na qual cada estado pode ser implementado independentemente dos outros. Antes a \textit{FaultRecovery} não entregava ao usuário uma estrutura de desenvolvimento pronto, agora ela foi modificada para atender a um padrão de projeto chamado \textit{State}. Além dessa melhoria, foi possível criar uma classe que simplifica o uso da redundância de dados, aumentando a integridade de um sistema embarcado.
+
+Ao final, são apresentados os resultados mostrando o tempo de execução após as modificações realizadas na biblioteca \textit{FaultRecovery} a fim de verificar se essas alterações impactaram no desempenho do código testado. O teste realizado com a \textit{FaultRecovery} foi executado em 5,2107 segundos, enquanto que em média o teste sem a biblioteca foi executado em 4,6854 segundos, ou seja, a biblioteca elevou o tempo de execução do teste em 0,5253 segundos. Entretanto, a biblioteca foi exposta a testes de recuperação de falhas, mostrando-se eficaz em todos eles. A classe também foi exposta a testes de integridade dos dados. Nos resultados que não utilizaram a redundância de dados, o tempo de execução médio foi de 0,0614 segundos, enquanto que nos testes com redundância o tempo médio foi de 0,3272 segundos. Neste, a classe TData elevou o tempo de execução do teste em 0,2658 segundos. Entretanto, no primeiro resultado a média de falhas encontradas foi de 44\% enquanto que no segundo foi de 0\%.
+
+Como resultado deste trabalho, a ideia de modificação da biblioteca \textit{FaultRecovery} foi utilizada pelo projeto de extensão Coxim Robótica sediado na UFMS - Campus Coxim, no desenvolvimento de um programa para um robô seguidor de linha e continuará sendo utilizada em programas futuros. A classe que facilita a implementação de redundância de dados foi incluída na biblioteca \textit{FaultRecovery}, que possibilita ao usuário definir se o seu sistema embarcado se recuperará de falhas e também poderá proteger seus dados mais importantes.
