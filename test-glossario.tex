@@ -1,0 +1,31 @@
+\documentclass[]{scrreprt}
+\usepackage{glossaries}
+\author{foo}
+\title{foo}
+\date{}
+
+\makeglossaries
+
+\newglossaryentry{latex}{
+    name=latex,
+    description={Is a mark up language specially suited for scientific documents}
+}
+\newglossaryentry{ppk}{
+	name=ppk,
+		description={É bem cabeluda haha}
+}
+
+\begin{document}
+
+\pagenumbering{roman}
+\maketitle
+%\printglossaries
+\printglossary[type=\acronymtype,title=Abbreviations]
+
+\chapter{Introduction}
+\pagenumbering{arabic}
+\label{cha:Introduction}
+
+foo \gls{latex} e \gls{ppk} bem greluda :P
+
+\end{document} 

@@ -1,32 +1,21 @@
 %====================================================================================================
-% Biblioteca Digital: Uma Estratégia de Gestão e Preservação de Periódicos do Século XX com DSpace e Metadados Dublin Core
-%====================================================================================================
-% TCC
 %----------------------------------------------------------------------------------------------------
 % Autor				: Vagner da Silva Bezerra
-% Orientador		: Juliana Wolf Pereira
-% Instituição 		: UFMS - Universidade Federal do Mato Grosso do Sul
-% Departamento		: CPCX - Sistema de Informação
 %----------------------------------------------------------------------------------------------------
 % Data de criação	: 10 de Outubro de 2016
 %====================================================================================================
 
 \documentclass[a4paper,12pt,brazil]{dct-class}
 
-
 \usepackage[utf8]{inputenc}
 \usepackage[top=30mm,bottom=25mm,left=25mm,right=20mm]{geometry}
-
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{pdfpages}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[brazil]{babel}
-%\usepackage{pdfpages}
-
 \usepackage{setspace}
-%\usepackage{caption}
 \usepackage[font=small]{caption}
 
 %\DeclareCaptionFormat{myformat}{#1#2#3\hrulefill}
@@ -45,80 +34,37 @@
 \renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
+%Pacote de edição de arquivos PDF e de imagem
 \usepackage{tikz}
 
+%Configurações Lista de Siglas e Abreviações
+\usepackage[nopostdot,style=super,nonumberlist,toc]{glossaries}
+\newglossarystyle{modsuper}{
+	\glossarystyle{super}
+	\renewcommand{\glsgroupskip}{}
+}
+\makeglossaries
+
 \begin{document}
-	
-\thispagestyle{empty}
-\include{informacoes} %Informações Básicas da Monografia
-\include{capa_contracapa} %Capa e Contra Capa
-\include{folha_aprovacao} % Folha de Aprovação
-\include{resumo} % Resumo
-\include{abstract} % Abstract
-\include{agradecimentos} % Abstract
-
-\tableofcontents
-
-%\printglossaries
-
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Lista de Figuras}
-\listoffigures
-
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Lista de Tabelas}
-\listoftables
-
-%\cleardoublepage
-%\phantomsection
-%\addcontentsline{toc}{chapter}{Lista de Algoritmos}
-%\listofalgorithmes
-
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Lista de Quadros}
-\lstlistoflistings
-
-% lista de abreviaturas e siglas
-% o parametro deve ser a abreviatura mais longa
-%\begin{listofabbrv}{SPMD}
-%	\item[CMM] Capability Maturity Model
-%	\item[SMP] Symmetric Multi-Processor
-%	\item[NUMA] Non-Uniform Memory Access
-%	\item[SIMD] Single Instruction Multiple Data
-%	\item[SPMD] Single Program Multiple Data
-%	\item[ABNT] Associação Brasileira de Normas Técnicas
-%\end{listofabbrv}
-
-%\pdfbookmark[0]{\lstlistlistingname}{lol}
-%\begin{KeepFromToc}
-%\lstlistoflistings
-%\end{KeepFromToc}
-%\cleardoublepage
-
-\include{introducao} % Introdução
-\include{fundamentacao} % Fundamentação
-\include{metodologia} % Aplicação
-\include{resultados} % Resultados
-\include{conclusao} % Conclusão
-
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Referências Bibliográficas}
-\bibliographystyle{abnt}
-%\bibliographystyle{apalike} 
-%\bibliographystyle{ieeetr} % Ordena por ordem de aparição.  
-%\bibliographystyle{abbr} % Ordena por ordem alfabetica com nomes abreviados.
-%\bibliographystyle{plain} % Ordena por ordem alfabetica com nomes por extenso.
-\bibliography{bibliografia} % commented if *.bbl file included.
-
-\addcontentsline{toc}{chapter}{Ap\^endices}
-\appendix
-\include{apendice}
-
-%\documentclass[a4paper]{article}
-
-
+	\thispagestyle{empty}
+	\include{informacoes} %Informações Básicas da Monografia
+	\include{capa_contracapa} %Capa e Contra Capa
+	\include{folha_aprovacao} % Folha de Aprovação
+	\include{dedicatoria} % Dedicatória
+	\include{agradecimentos} % Dedicatória
+	\include{epigrafe} % Epígrafe
+	\include{resumo} % Resumo
+	\include{abstract} % Abstract
+	\include{lista_figuras} % Lista de Figuras
+	\include{lista_tabelas} % Lista de Tabelas
+	\include{lista_quadros} % Lista de Quadros
+	\include{lista_siglas} %Lista de Siglas
+	\include{sumario} % Sumário
+	\include{introducao} % Introdução
+	\include{fundamentacao} % Fundamentação
+	\include{metodologia} % Aplicação
+	\include{resultados} % Resultados
+	\include{conclusao} % Conclusão
+	\include{referencias} % Referências Bibliográficas
+	\include{apendice}
 \end{document}

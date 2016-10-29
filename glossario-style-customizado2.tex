@@ -1,0 +1,27 @@
+\documentclass[11pt,a4paper,openany,oneside]{book}
+
+\usepackage[acronym,nonumberlist,toc]{glossaries}
+\usepackage{glossary-superragged}
+\newglossarystyle{modsuper}{%
+	\glossarystyle{super}%
+	\renewcommand{\glsgroupskip}{}
+}
+\makeglossaries
+
+\renewcommand*{\acronymname}{List of Acronyms and Abbreviations}
+\renewcommand*{\glspostdescription}{} % remove trailing dot
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+\newacronym[longplural={Affinity Diagrams}]{ad}{AD}{Affinity Diagram}
+\newacronym{dom}{DOM}{Document Object Model}
+\newacronym{svg}{SVG}{Scalable Vector Graphics}
+\newacronym{spa}{SPA}{Single Page Application}
+
+\begin{document}
+	
+	\tableofcontents
+	\printglossary[style=modsuper, type=\acronymtype]
+	
+	\section{First section}
+	
+	Here we go... \gls{ad}, \gls{dom}, \gls{svg} and \gls{spa}!
+\end{document} 

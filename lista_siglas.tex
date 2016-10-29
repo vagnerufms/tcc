@@ -5,11 +5,11 @@
 % Data de criação	: 10 de Outubro de 2016
 %====================================================================================================
 
-\addcontentsline{toc}{chapter}{Apêndices}
-\appendix
+\chapter*{Lista de Siglas de Abreviações}
+\renewcommand{\glossarysection}[2][]{}
+\printglossary[style=modsuper, type=\acronymtype]
+%\printglossary[style=modsuper, type=\acronymtype, title={Lista de Siglas de Abreviações}]
 
-\chapter{Anexos} \label{App:ApendiceA}
+\newacronym[type=\glsdefaulttype]{lid}{LID}{Lorem Ipsum Dolor}
 
-TEXTO ANEXO.
-
-%\includepdf[pages={1-17}]{anexos.pdf}
+\thispagestyle{empty}

@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\usepackage{luacode}
+
+\begin{document}
+
+\begin{luacode}
+function read(file)
+    local handler = io.open(file, "rb")
+    local content = handler:read("*all")
+    handler:close()
+    return content
+end
+JSON = (loadfile "JSON.lua")()
+local table = JSON:decode(read("informacoes.json"))
+tex.print(table['recipe']['title'])
+\end{luacode}
+
+\end{document}

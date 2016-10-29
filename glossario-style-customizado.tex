@@ -1,0 +1,33 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage{lipsum}% provides dummy text for testing
+
+\usepackage[doublespacing]{setspace}
+\usepackage[nopostdot,style=super,nonumberlist,toc]{glossaries}
+
+\makeglossaries
+
+% load some dummy acronyms for testing
+%\loadglsentries{example-glossaries-acronym.tex}
+\include{templates-glossarios/example-glossaries-acronym} %Capa e Contra Capa
+
+\begin{document}
+\tableofcontents
+
+\newglossarystyle{modsuper}{%
+	\glossarystyle{super}%
+	\renewcommand{\glsgroupskip}{}
+}
+
+\singlespacing
+%\printglossary[title={List of Abbreviations}]
+\printglossary[style=modsuper, type=\acronymtype, title={List of Abbreviations}]
+\doublespacing
+
+\chapter{Sample Text}
+
+\lipsum % dummy text - remove from real document
+
+Add all the acronyms for testing purposes \glsaddall
+
+\end{document}
