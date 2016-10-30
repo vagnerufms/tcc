@@ -6,7 +6,6 @@
 %====================================================================================================
 
 \chapter*{Resumo}
-\thispagestyle{empty}
 
 {\setlength{\parindent}{0cm}
 	
@@ -16,9 +15,6 @@ Os objetivos deste trabalho foram estudar possíveis causas de falhas em sistema
 
 Ao final, são apresentados os resultados mostrando o tempo de execução após as modificações realizadas na biblioteca \textit{FaultRecovery} a fim de verificar se essas alterações impactaram no desempenho do código testado. O teste realizado com a \textit{FaultRecovery} foi executado em 5,2107 segundos, enquanto que em média o teste sem a biblioteca foi executado em 4,6854 segundos, ou seja, a biblioteca elevou o tempo de execução do teste em 0,5253 segundos. Entretanto, a biblioteca foi exposta a testes de recuperação de falhas, mostrando-se eficaz em todos eles. A classe também foi exposta a testes de integridade dos dados. Nos resultados que não utilizaram a redundância de dados, o tempo de execução médio foi de 0,0614 segundos, enquanto que nos testes com redundância o tempo médio foi de 0,3272 segundos. Neste, a classe TData elevou o tempo de execução do teste em 0,2658 segundos. Entretanto, no primeiro resultado a média de falhas encontradas foi de 44\% enquanto que no segundo foi de 0\%.
 
-\leading{15pt}
 Como resultado deste trabalho, a ideia de modificação da biblioteca \textit{FaultRecovery} foi utilizada pelo projeto de extensão Coxim Robótica sediado na UFMS - Campus Coxim, no desenvolvimento de um programa para um robô seguidor de linha e continuará sendo utilizada em programas futuros. A classe que facilita a implementação de redundância de dados foi incluída na biblioteca \textit{FaultRecovery}, que possibilita ao usuário definir se o seu sistema embarcado se recuperará de falhas e também poderá proteger seus dados mais importantes.
 	
 }
-\thispagestyle{empty}
-\clearpage

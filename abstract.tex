@@ -8,7 +8,7 @@
 \chapter*{Abstract}
 
 {\setlength{\parindent}{0cm}
-\thispagestyle{empty}
+
 Currently, humans use various electronic devices such as mobile phones, MP3 players, televisions, tablets, and other devices used in aid of daily activities and improving the quality of life. Due to expansion of ubiquitous computing, embedded systems are increasingly present in daily life. However these systems can malfunction, indicating a system's inability to perform a certain task because of faults in a device component or the environment, which in turn, failures are caused by \cite{Nelson:1990}. According to Nelson \cite{Nelson:1990} a fault is an abnormal condition. The causes are associated with damage to any component, rust or other deterioration; and external disturbances, such as harsh environmental conditions, electromagnetic interference, ionizing radiation, or misuse of the system.
 
 The objectives of this work were to study possible causes of failures in embedded systems, modify the libraries FaultInjector and FaultRecovery. Even create a data redundancy class in which its function is to ensure the data integrity of an embedded system. One of the modifications is designed to allow the user to develop a state machine, in which each state may be implemented independently of the others. Before the FaultRecovery not delivered to the user a ready development framework, it has now been modified to meet a standard project called State.
@@ -16,8 +16,5 @@ The objectives of this work were to study possible causes of failures in embedde
 At the end, the results are displayed showing the execution time after the changes made in the library FaultRecovery to see if these changes impacted the performance of the tested code. The test with microarray FaultRecovery was run in 5,2107 seconds, while on average the test without the library was running at 4,6854 seconds or, the library increased the test runtime held at 0,5253. However the library was exposed to disaster recovery testing, proving to be effective in all of them. The class was also exposed to the performance tests and data redundancy, the results using no data redundancy, the average run time was 0,0614 seconds, while the testing redundancy with the average time was 0,3272 seconds, the TData class raised the test runtime 0,2658 seconds. However the first result average flaws found was 44 \% while the second was 0 \%.
 
 As a result of this work, the idea of modifying the library FaultRecovery was used by the extension project Cushion Robotics based in UFMS - Campus cushion in the development of a program for a line follower cart and will be used in future programs. a class that allows the use of data redundancy in an embedded system was also created, which was included in the library FaultRecovery, which enables the user to set up your embedded system to recover from faults and can also protect your most data important.
-}
 
-\thispagestyle{empty}
-\clearpage
-\cleardoublepage
+}
