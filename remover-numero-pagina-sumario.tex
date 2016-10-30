@@ -1,0 +1,33 @@
+\documentclass{report}
+\usepackage{times}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\footrulewidth}{0.4pt}
+\rhead{\fontsize{10}{12}\selectfont \textit{\textbf{2014-2015}}}
+\lhead{\fontsize{10}{12}\selectfont \textit{\textbf{ECG SIMULATION AND ACQUISITION}}}
+\rfoot{\fontsize{10}{12}\selectfont \textit{\textbf{\thepage}}}
+\lfoot{\fontsize{10}{12}\selectfont \textit{\textbf{Dept. of ECE, RNSIT, BANGALORE}}}
+
+\AtBeginDocument{%
+  \addtocontents{toc}{\protect\thispagestyle{empty}}%
+  \addtocontents{lof}{\protect\thispagestyle{empty}}%
+}
+
+\usepackage{blindtext}% dummy text
+\begin{document}
+%
+\pagestyle{empty}
+\tableofcontents
+\listoffigures
+%
+\clearpage
+\pagestyle{fancy}
+\Blinddocument\Blinddocument\Blinddocument\Blinddocument
+\Blinddocument\Blinddocument\Blinddocument\Blinddocument
+\begin{figure}
+  \fbox{Figure}
+  \caption{A figure}
+\end{figure}
+\end{document}

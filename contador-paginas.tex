@@ -1,0 +1,25 @@
+\documentclass{report}
+\usepackage{hyperref}
+
+\newcounter{nopage}
+\newenvironment{nopage}
+ {\clearpage\stepcounter{nopage}%
+  \renewcommand{\thepage}{NP\arabic{nopage}}%
+  \thispagestyle{empty}}
+ {\clearpage\addtocounter{page}{-1}}
+
+\begin{document}
+
+First page
+
+\begin{nopage}
+\chapter{A chapter}
+\end{nopage}
+
+Second page
+
+\begin{nopage}
+\chapter{Another chapter}
+\end{nopage}
+
+\end{document}
