@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\usepackage{etoolbox}
+
+\providetoggle{folhaRosto}
+\settoggle{folhaRosto}{false}
+
+\begin{document}
+
+\iftoggle{folhaRosto}{Mostra}%
+{Nao Mostra}
+
+\end{document}
