@@ -78,7 +78,15 @@
 %Pacote para configurar cores
 \usepackage{xcolor}
 
+%Pacote para configurar espaçamento de títulos
+\usepackage{titlesec}
+
 \begin{document}
+	
+	%Configuração espaçamento de títulos de capítulos
+	\titleformat{\chapter}[display]
+		{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{30pt}{\Huge}
+	\titlespacing*{\chapter}{0pt}{0pt}{30pt}
 	
 	%Configuração de numeração sequencial de figuras, tabelas e quadros
 	\counterwithout{figure}{chapter}
